@@ -14,15 +14,11 @@ public class PuzzleToggle : MonoBehaviour
         puzzle.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Toggle()
     {
-        if (Input.GetKeyDown("p"))
-        {
             if(puzzle.activeSelf)
                 puzzle.SetActive(false);
             else
                 puzzle.SetActive(true);
-        }        
     }
 }
