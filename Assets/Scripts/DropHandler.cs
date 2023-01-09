@@ -15,7 +15,7 @@ public class DropHandler : MonoBehaviour,IDropHandler
             // Debug.Log(obj.name);
             if(Check(obj))
             {
-                AcceptItem.itemCounter++;
+                JudgeSolution.itemCounter++;
                 obj.SetActive(false);
             }
         }

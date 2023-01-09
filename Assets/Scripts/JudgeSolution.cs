@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AcceptItem : MonoBehaviour
+public class JudgeSolution : MonoBehaviour
 {
     public static int itemCounter;
     public int totalItems;
+    public Canvas cDialog;
+    public Canvas wDialog;
     RectTransform rectTransform;
 
     void Start()
@@ -23,10 +25,15 @@ public class AcceptItem : MonoBehaviour
         bool isSolutionCorrect = (itemCounter == totalItems); 
         if(isSolutionCorrect)
         {
+            
+            wDialog.enabled = false;
+            cDialog.enabled = true;
             Debug.Log("Correct!");
         }
         else
         {
+            cDialog.enabled = false;
+            wDialog.enabled = true;
             Debug.Log("Incorrect!");
         }
     }
