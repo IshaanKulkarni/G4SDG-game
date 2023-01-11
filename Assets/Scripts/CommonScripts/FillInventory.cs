@@ -17,6 +17,7 @@ public class FillInventory : MonoBehaviour
             {
                 if(InventoryItems[i].name == RemainingInventoryItems.obj[j])
                 {
+                    Debug.Log("YES");
                     InventoryItems[i].SetActive(true);
                 }
             }
