@@ -31,8 +31,16 @@ public class DropHandler : MonoBehaviour,IDropHandler
             {
                 Debug.Log("found!");
                 inventoryItems[i].SetActive(false);
+                ScoreHandler.score +=100;
                 return true;
             }
+        }
+        if(ScoreHandler.score >= 20)
+        {
+            ScoreHandler.score -=20;
+        }
+        else{
+            ScoreHandler.score = 0;
         }
         Debug.Log("Not found!");
         return false;

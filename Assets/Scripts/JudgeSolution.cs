@@ -28,6 +28,7 @@ public class JudgeSolution : MonoBehaviour
             
             wDialog.enabled = false;
             cDialog.enabled = true;
+            ScoreHandler.score += 10000;
             Debug.Log("Correct!");
         }
         else
