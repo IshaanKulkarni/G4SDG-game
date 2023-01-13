@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class DropHandler : MonoBehaviour,IDropHandler
 {
     public GameObject[] binItems;
+    public GameObject[] inventoryItems;
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)
@@ -28,11 +29,12 @@ public class DropHandler : MonoBehaviour,IDropHandler
             Debug.Log(binItems[i].name);
             if(binItems[i].name.Equals(item.name))
             {
-                // Debug.Log("found!");
+                Debug.Log("found!");
+                inventoryItems[i].SetActive(false);
                 return true;
             }
         }
-        // Debug.Log("Not found!");
+        Debug.Log("Not found!");
         return false;
     }
 }
