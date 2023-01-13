@@ -11,6 +11,7 @@ public class CurrentImage : MonoBehaviour
     public GameObject curObject;
     public GameObject inventoryObject;
     public GameObject targetObject;
+    public ScoreSO score;
     public bool flag;
     public void Check()
     {
@@ -20,14 +21,14 @@ public class CurrentImage : MonoBehaviour
             curObject.SetActive(false);
             if(flag)
                 targetObject.SetActive(true);
-            ScoreHandler.score+=500;
+            score.curScore+=500;
         }
         else
         {
-            if(ScoreHandler.score >= 50)
-            ScoreHandler.score-=50;
+            if(score.curScore >= 50)
+            score.curScore-=50;
             else
-            ScoreHandler.score=0;
+            score.curScore=0;
         }
     }   
 }

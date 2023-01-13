@@ -7,6 +7,7 @@ public class DropHandler : MonoBehaviour,IDropHandler
 {
     public GameObject[] binItems;
     public GameObject[] inventoryItems;
+    public ScoreSO score;
     public void OnDrop(PointerEventData eventData)
     {
         if(eventData.pointerDrag != null)
@@ -31,16 +32,16 @@ public class DropHandler : MonoBehaviour,IDropHandler
             {
                 Debug.Log("found!");
                 inventoryItems[i].SetActive(false);
-                ScoreHandler.score +=100;
+                score.curScore+=100;
                 return true;
             }
         }
-        if(ScoreHandler.score >= 20)
+        if(score.curScore >= 20)
         {
-            ScoreHandler.score -=20;
+            score.curScore -=20;
         }
         else{
-            ScoreHandler.score = 0;
+            score.curScore = 0;
         }
         Debug.Log("Not found!");
         return false;

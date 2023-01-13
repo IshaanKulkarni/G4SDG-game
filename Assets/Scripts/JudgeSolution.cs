@@ -9,6 +9,7 @@ public class JudgeSolution : MonoBehaviour
     public int totalItems;
     public Canvas cDialog;
     public Canvas wDialog;
+    public ScoreSO score;
     RectTransform rectTransform;
 
     void Start()
@@ -28,7 +29,7 @@ public class JudgeSolution : MonoBehaviour
             
             wDialog.enabled = false;
             cDialog.enabled = true;
-            ScoreHandler.score += 10000;
+            score.curScore += 10000;
             Debug.Log("Correct!");
         }
         else

@@ -6,16 +6,11 @@
  using TMPro;
 public class ScoreHandler : MonoBehaviour
 {
-    public static int score;
+    public ScoreSO score;
     public TMP_Text scoreText;
     
-    void Start()
-    {
-        score = 0;
-    } 
-
     void Update()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = score.curScore.ToString();
     }
 }
