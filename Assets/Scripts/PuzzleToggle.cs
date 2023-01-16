@@ -7,13 +7,16 @@ using UnityEngine.EventSystems;
 
 public class PuzzleToggle : MonoBehaviour
 {
-    public GameObject puzzle;
+    [SerializeField]
+    private GameObject puzzle;      // puzzle panel
 
+    // initially panel is disabled
     void Start()
     {
         puzzle.SetActive(false);
     }
 
+    //function to toggle the puzzle panel
     public void Toggle()
     {
             if(puzzle.activeSelf)

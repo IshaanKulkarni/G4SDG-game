@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 
 public class InventoryToggle : MonoBehaviour
 {
-    public GameObject inventory;
+    [SerializeField] 
+    private GameObject inventory;   // The inventory panel
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class InventoryToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // toggle inventory on key press I
         if (Input.GetKeyDown("i"))
         {
             if(inventory.activeSelf)
