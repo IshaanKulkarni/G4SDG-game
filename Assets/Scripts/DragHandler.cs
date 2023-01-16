@@ -5,10 +5,11 @@ using UnityEngine.EventSystems;
 
 public class DragHandler : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler 
 {
-    private RectTransform item;
-    [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private Canvas canvas;
+    private RectTransform item;                         // getting the transform component of current object
+    [SerializeField] private CanvasGroup canvasGroup;   // canvas group for the draggable object
+    [SerializeField] private Canvas canvas;             // canvas for the draggable object
 
+    // initialzing the compenents
     private void Awake()
     {
         item = GetComponent<RectTransform>();
@@ -28,6 +29,7 @@ public class DragHandler : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDrag
         item.anchoredPosition += eventData.delta/canvas.scaleFactor;
     } 
 
+    // Termination
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;

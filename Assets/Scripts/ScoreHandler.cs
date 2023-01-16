@@ -6,9 +6,11 @@
  using TMPro;
 public class ScoreHandler : MonoBehaviour
 {
-    public ScoreSO score;
-    public TMP_Text scoreText;
+    [SerializeField]
+    private ScoreSO score;          // score SO
+    public TMP_Text scoreText;      // Text for current score
     
+    // Update the score with every frame update
     void Update()
     {
         scoreText.text = score.curScore.ToString();

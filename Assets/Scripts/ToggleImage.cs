@@ -4,12 +4,17 @@
 
 public class ToggleImage : MonoBehaviour
 {
-    public Image img ;
-    public int index;
-    public Button[] btns;
+    [SerializeField]
+    private Image img;          // inventory icon
+    [SerializeField]
+    private int index;          // items index
+    [SerializeField]
+    private Button[] btns;      // button components
     
+    // Toggle is the implementation of locking and unlocking mechanism of inventory mechanism
     public void Toggle()
     {
+        // set all other button to non - interactable mode once a choice is locked
         if(img.isActiveAndEnabled)
         {
             img.enabled = false;
@@ -21,7 +26,7 @@ public class ToggleImage : MonoBehaviour
             }
             CurrentImage.curImage = index.ToString();
         }
-        else
+        else    // else free all choices
         {
             img.enabled = true;
             btns[index].interactable = true;

@@ -7,16 +7,18 @@ using UnityEngine.EventSystems;
 
 public class FillSlot : MonoBehaviour
 {
-    public GameObject icon;
+    [SerializeField] 
+    private GameObject icon;
 
+    // disable icon in the beginning
     void Start()
     {
         icon.SetActive(false);
     }
 
+    // function on trigger event
     private void OnTriggerEnter2D(Collider2D player)
     {
-        //        if(player.gameObject.tag == "Player")
         icon.SetActive(true);
     }
 }
